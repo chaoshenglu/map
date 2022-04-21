@@ -29,9 +29,10 @@
 			}
 		},
 		onLoad() {
+			console.log('希望3秒后，清除地图上绘制的轨迹')
 			setTimeout(() => {
-				console.log('希望3秒后，清除地图上绘制的轨迹')
 				this.polyline = []
+				console.log('3秒后，this.polyline=',this.polyline)
 			}, 3000);
 		},
 		methods: {
