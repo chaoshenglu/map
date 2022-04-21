@@ -1,0 +1,54 @@
+<template>
+	<view class="myMapPage">
+		<map style="width: 300px; height: 300px;" :latitude="latitude" :longitude="longitude" :polyline="polyline"></map>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				latitude: 37.48205260,
+				longitude: 121.44577861,
+				polyline: [{
+					points: [{
+						longitude: 121.44577861,
+						latitude: 37.48205260
+					}, {
+						longitude: 121.44611657,
+						latitude: 37.48207388
+					}, {
+						longitude: 121.44725382,
+						latitude: 37.48224841
+					}, {
+						longitude: 121.44766152,
+						latitude: 37.48237186
+					}],
+					color: "#ff0000"
+				}]
+			}
+		},
+		onLoad() {
+			setTimeout(() => {
+				console.log('希望3秒后，清除地图上绘制的轨迹')
+				this.polyline = []
+			}, 3000);
+		},
+		methods: {
+
+		}
+	}
+</script>
+
+<style>
+	.myMapPage {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.content {
+		background-color: #007AFF;
+		width: 100%;
+		height: 100%;
+	}
+</style>
